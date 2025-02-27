@@ -1,4 +1,4 @@
-module github.com/linuxkit/virtsock
+module github.com/rafael-at-bunny/vsock
 
 go 1.17
 
