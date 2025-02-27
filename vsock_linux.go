@@ -115,6 +115,7 @@ type vsockConn struct {
 
 func newVsockConn(fd uintptr, local, remote *Addr) *vsockConn {
 	vsock := os.NewFile(fd, fmt.Sprintf("vsock:%d", fd))
+	syscall.SetNonblock(int(fd), true)
 	return &vsockConn{vsock: vsock, fd: fd, local: local, remote: remote}
 }
 
